@@ -1,0 +1,10 @@
+.terraform
+terraform.tfstate*
+*.pem
+*.log
+*.lock
+*test*
+*.rli
+*.deb
+*.gz
+*.airgap
