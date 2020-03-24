@@ -1,13 +1,26 @@
 # Description
 S3 bucket with all installation packages and configuration file dependencies for installation
 
-Once the bucket is completed copy all the packages:
-
-```bash
-aws s3 cp file/ s3://ptfe-installation-bin --recursive --region eu-central-1
+# How to consume
+```hcl
+$ terraform init
+$ terraform apply --auto-approve
 ```
 
-You should have similar view in your s3 bucket
+## Inputs
+| **Name**  | **Type** | **Default** | **Required** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| bucket | string | ptfe-installation-bin | yes | S3 bucket name |
+| region | string | eu-central-1 | yes | S3 bucket region |
+
+## Outputs
+| **Name**  | **Type** | **Description** |
+| ------------- | ------------- | ------------- |
+| s3_arn | string | S3 arn |
+
+## Upload files
+
+Once the bucket is completed copy all the packages you have locally to remote s3
 
 ```bash
 -rw-r--r--@  1 apopa  staff  1064025557 Mar 23 22:50 Terraform-Enterprise-417.airgap
@@ -25,5 +38,13 @@ You should have similar view in your s3 bucket
 ➜  files git:(master) ✗ pwd
 ../ptfe-aws-es-upgrade/files
 ```
+
+Copy recursive files
+
+```bash
+aws s3 cp file/ s3://ptfe-installation-bin --recursive --region eu-central-1
+```
+
+You should have similar view in your s3 bucket
 
 ![alt text](../img/s3_installation.png "s3 bucket with installation packages and configuration files")

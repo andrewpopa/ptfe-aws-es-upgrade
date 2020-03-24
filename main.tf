@@ -116,7 +116,7 @@ module "iam-profile" {
         "Resource": [
           "${module.ptfe-es.s3_bucket_arn}",
           "${module.ptfe-es-snapshot.s3_bucket_arn}",
-          "arn:aws:s3:::ptfe-installation-bin" # NEED TO BE CREATED MANUALLY
+          "arn:aws:s3:::ptfe-installation-bin" 
         ]
       },
       {
