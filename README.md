@@ -1,6 +1,10 @@
 # Description
 Private Terraform installation and upgrade path using airgap installation mode. Based on modular installation using external services.
 
+The diagram for private Terraform would be the following. As this example is airgap (offline) installation, the diagram below would have [additional s3 bucket](https://github.com/andrewpopa/ptfe-aws-es-upgrade/tree/master/installation) with all the assets needed to perform the install 
+
+![alt text](img/PTFE_architecture.png "Private TFE architecture diagram")
+
 # Pre-requirements
 - [Terraform](https://www.terraform.io)
 - [PTFE](https://www.terraform.io/docs/enterprise/index.html)
